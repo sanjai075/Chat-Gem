@@ -118,20 +118,20 @@ const Main = () => {
       </div>
 
        {!showResult?
-        
-            <div className='md:h-[420px] overflow-hidden w-[100%] bg-slate-200  md:flex mt-2 md:flex-col  '>
+         
+            <div className='md:h-[420px]  w-[100%]   md:w-[70%] md:ml-[14%]  md:flex mt-2 md:flex-col  '>
          
             <motion.div 
               initial={{opacity:0}}
               animate={{ opacity: 1 }}
               transition={{duration:1 , delay:0.3 , ease:easeOut}}
-             className='   mt-5 ml-5  md:mt-1 md:text-[65px] md:w-[70] bg-slate-400  h-40 flex flex-col justify-center  text-6xl font-bold '>
+             className='   mt-5 ml-5  overflow-visible md:h-[180px]  md:mt-1 md:text-[60px] md:w-[70]  h-48 flex flex-col justify-center  text-6xl font-bold '>
              <p className="bg-gradient-to-r from-blue-500 via-red-800 to-red-950 inline-block text-transparent bg-clip-text">Hello, Dev</p>
             <p className="bg-gradient-to-r from-blue-500 via-red-500 to-red-800 inline-block text-transparent bg-clip-text">How can I help you today?</p>
           </motion.div>
 
             <div
-             className='flex md:flex-nowrap w-[500px] md:w-[100%]  md:overflow-x-hidden   bg-slate-600  ml-4      mt-9 gap-2 '>
+             className='flex md:overflow-hidden w-[95%] md:w-[100%]   overflow-x-scroll overflow-hidden scrollbar-hide     ml-4      mt-5 gap-2 '>
              {/* overflow-x-scroll overflow-hidden scrollbar-hide */}
              
     
@@ -139,7 +139,7 @@ const Main = () => {
                 initial={{opacity:0}}
                 animate={{ opacity: 1 }}
                 transition={{duration:1,delay:0.3,ease:easeOut}}
-                className='bg-slate-900  w-44 md:w-52 md:h-56  h-52 p-3 flex  rounded-2xl hover:bg-slate-800 '
+                className='bg-slate-900 max-w-56 min-w-48 md:h-56  h-52 p-3 flex  rounded-2xl hover:bg-slate-800 '
                 // className="flex-shrink-0 w-44 h-52  flex md:w-52 bg-slate-900 rounded-2xl p-3"
                 
                 >
@@ -152,7 +152,7 @@ const Main = () => {
                initial={{opacity:0}}
                animate={{ opacity: 1 }}
                transition={{duration:1,delay:0.4,ease:easeOut}}
-               className='bg-slate-900  w-44 md:w-52  h-52 md:h-56 p-3 flex rounded-2xl hover:bg-slate-800'
+               className='bg-slate-900 max-w-56 min-w-52  h-52 md:h-56 p-3 flex rounded-2xl hover:bg-slate-800'
               // className="flex-shrink-0 w-44 h-52 flex md:w-52  bg-slate-900 rounded-2xl p-3"
                >
                <p>Breifly summarize this concept : urban planning</p>
@@ -164,7 +164,7 @@ const Main = () => {
                  initial={{opacity:0}}
                   animate={{ opacity: 1 }}
                   transition={{duration:1,delay:0.5,ease:easeOut}}
-                  className='bg-slate-900 w-44  md:w-52 h-52 md:h-56 flex  p-3  rounded-2xl hover:bg-slate-800'
+                  className='bg-slate-900 max-w-56 min-w-52 h-52 md:h-56 flex  p-3  rounded-2xl hover:bg-slate-800'
                   // className="flex-shrink-0 w-44 h-52 flex md:w-52  bg-slate-900 rounded-2xl p-3"
                   >
                  <p>Brainstrom team bonding activities for our work retreat</p>
@@ -176,7 +176,7 @@ const Main = () => {
                  initial={{opacity:0}}
                  animate={{ opacity: 1 }}
                  transition={{duration:1,delay:0.6,ease:easeOut}}
-                 className='bg-slate-900 w-44 md:w-52 h-52 md:h-56 flex p-3  rounded-2xl hover:bg-slate-800 '
+                 className='bg-slate-900 max-w-56 min-w-52 h-52 md:h-56 flex p-3  rounded-2xl hover:bg-slate-800 '
                 // className="flex-shrink-0 w-44 h-52 flex md:w-52  bg-slate-900 rounded-2xl p-3"
                  >
                 <p>imporove the readability of the following code</p>
