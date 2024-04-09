@@ -39,14 +39,14 @@ const Main = () => {
  }
 
   return (
-    <div className='w-full flex flex-col  bg-slate-950 text-slate-300 font-Outfit'>
+    <div className='w-full flex flex-col  bg-gray-950 text-slate-300 font-Outfit'>
       
      {side ?
      <div className={side?'md:hidden absolute flex flex-col h-full   w-52 bg-slate-900 transition-all  duration-150 ease-out z-10':'w-0 transition-all duration-500 ease-out'} >
 
-        <div className='flex items-center p-4 gap-[12.5px] '>
+        <div className='flex items-center p-[15px] gap-[12.5px] '>
          {/* <img onClick={()=>SetSide(!side)} className='w-6' src={assets.menu_icon} alt="" /> */}
-         <TfiMenu  onClick={()=>SetSide(!side)}   className='w-5 h-6 ml-1' />
+         <TfiMenu  onClick={()=>SetSide(!side)}   className='w-5 h-6 ml-[5px]' />
          <p className='text-[19px]'>Gemini</p>
         </div>
 
@@ -58,7 +58,7 @@ const Main = () => {
         </div>
        
         <div>
-        <div className='w-6 mt-6 ml-3'>
+        <div className='w-12  mt-6 ml-3'>
           <p>Recent</p>
       </div >
       <div className='mt-4 ml-5'>
@@ -106,7 +106,13 @@ const Main = () => {
 :<div className='w-0 transition-all duration-500 delay-150 ease-out overflow-x-auto-auto'>
   </div>} 
 
-       <div className=' flex p-3  w-[100%] items-center  justify-between   '>
+       <motion.div
+       
+       initial={{opacity:0 , y:-40}}
+       animate={{ opacity: 1, y:0 }}
+       transition={{duration:1 , delay:0.3 , ease:easeOut}}
+
+       className=' flex p-3  w-[100%] items-center  justify-between   '>
            {/* <img  onClick={()=>SetSide(!side)} className='w-6 ml-2 md:hidden rounded-md fill-current text-green-600 ' src={assets.menu_icon} alt="" /> */}
         
            <div className='flex items-center w-full gap-[12.5px] ml-[-8px]  '>
@@ -115,15 +121,15 @@ const Main = () => {
           </div>
 
            <img className='  rounded-full w-9  ' src={assets.user_icon} alt="" />
-      </div>
+      </motion.div>
 
        {!showResult?
          
             <div className='md:h-[420px]  w-[100%]   md:w-[70%] md:ml-[14%]  md:flex mt-2 md:flex-col  '>
          
             <motion.div 
-              initial={{opacity:0}}
-              animate={{ opacity: 1 }}
+              initial={{opacity:0, x:-30}}
+              animate={{ opacity: 1, x:0 }}
               transition={{duration:1 , delay:0.3 , ease:easeOut}}
              className='   mt-5 ml-5  overflow-visible md:h-[180px]  md:mt-1 md:text-[60px] md:w-[70]  h-48 flex flex-col justify-center  text-6xl font-bold '>
              <p className="bg-gradient-to-r from-blue-500 via-red-800 to-red-950 inline-block text-transparent bg-clip-text">Hello, Dev</p>
@@ -138,7 +144,7 @@ const Main = () => {
               <motion.div
                 initial={{opacity:0}}
                 animate={{ opacity: 1 }}
-                transition={{duration:1,delay:0.3,ease:easeOut}}
+                transition={{duration:1,delay:0.2,ease:easeOut}}
                 className='bg-slate-900 max-w-56 min-w-48 md:h-56  h-52 p-3 flex  rounded-2xl hover:bg-slate-800 '
                 // className="flex-shrink-0 w-44 h-52  flex md:w-52 bg-slate-900 rounded-2xl p-3"
                 
@@ -169,7 +175,7 @@ const Main = () => {
                   >
                  <p>Brainstrom team bonding activities for our work retreat</p>
                   {/* <img className='w-6 self-end '  src={assets.message_icon} alt="" /> */}
-                 <FaRegMessage className=' w-16 h-4 flex self-end mb-1  ' />
+                 <FaRegMessage className=' w-16 h-5 flex self-end mb-1  ' />
               </motion.div>
 
               <motion.div
@@ -181,24 +187,24 @@ const Main = () => {
                  >
                 <p>imporove the readability of the following code</p>
                 {/* <img className='w-6 self-end '  src={assets.code_icon} alt="" /> */}
-               <IoCodeSlashOutline className='w-28 h-5 self-end mb-[2px] ' />
+               <IoCodeSlashOutline className='w-16 h-6 self-end mb-[2px] ' />
              </motion.div>
 
       </div>
        </div>:
-       <div className='h-[420px] ml-6 '>
+       <div className='h-[420px] ml-6 md:ml-[10%] '>
           <div className='flex items-center mt-5 gap-6 md:ml-6'>
           <img className='w-16 rounded-full' src={assets.user_icon} alt="" />
            <p>{recentPrompt}</p>
         </div>
         
-        <div className='flex h-72 gap-3 mt-6 md:mt-5 md:ml-[10%]'>
-          <img className={loading?'w-7 h-7 animate-spin':'w-7 h-7 '} src={assets.gemini_icon} alt="" />
+        <div className='flex h-72 gap-3 mt-6 md:mt-5 md:ml-[10%] '>
+          <img className={loading?'w-64 md:w-7 h-7 md: animate-spin ':'w-[100px] h-8 md:w-7 '} src={assets.gemini_icon} alt="" />
           {loading?
           <div className=' flex flex-col gap-3'>
-            <hr  className='bg-gradient-to-r from-cyan-500 to-blue-500 animate-pulse   w-[300px] h-4 '  />
-            <hr  className='bg-gradient-to-r from-cyan-500 to-blue-500 animate-pulse  w-[250px] h-4' />
-            <hr  className='bg-gradient-to-r from-cyan-500 to-blue-500 animate-pulse  w-[200px] h-4' />
+            <hr  className='bg-gradient-to-r from-cyan-500 to-blue-500 animate-pulse   w-[300px]  md:w-[500px]  h-4 '  />
+            <hr  className='bg-gradient-to-r from-cyan-500 to-blue-500 animate-pulse  w-[250px]  md:w-[450px]  h-4' />
+            <hr  className='bg-gradient-to-r from-cyan-500 to-blue-500 animate-pulse  w-[200px] md:w-[300px] h-4' />
            </div>:
           <p className='overflow-y-scroll overflow-hidden scrollbar-hide md:w-[70%] mr-4    ' dangerouslySetInnerHTML={{__html:resultData}}></p>}
          
@@ -234,7 +240,7 @@ const Main = () => {
        transition={{duration:0.5,delay:0.6,ease:easeOut}}
  
        className=''>
-       <p className='text-[12px] text-center md:ml-[7%] md:mb-2  md:text-xs ml-2  md:w-[80%]   '>Gemini may display inaccurate info, including about people, so double-check its responses</p>
+       <p className='text-[12px] text-center md:ml-[7%] md:mt-6  md:text-xs ml-2  md:w-[80%]   '>Gemini may display inaccurate info, including about people, so double-check its responses</p>
        </motion.div>
        
     </div>

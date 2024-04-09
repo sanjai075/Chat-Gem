@@ -57,7 +57,7 @@ const newChat =()=>{
       let newRes2 = newRes.split("*").join("</br>")
     
       let newResponseArr = newRes2.split(" ")
-      for(let i=0; i<=newResponseArr.length; i++)
+      for(let i=0; i<newResponseArr.length; i++)
       {
         const nextWord = newResponseArr[i]
         delayPara(i,nextWord+" ")
