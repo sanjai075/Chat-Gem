@@ -57,11 +57,11 @@ const Main = () => {
            
         </div>
        
-        <div>
+        <div className=' h-96'>
         <div className='w-12  mt-6 ml-3'>
           <p>Recent</p>
       </div >
-      <div className='mt-4 ml-5'>
+      <div className='mt-4 ml-5 '>
       {prevPrompt.map((item)=>{
          return(
           
@@ -80,7 +80,7 @@ const Main = () => {
       </div>
         
 
-       <div className='ml-4 mt-48 flex flex-col gap-2  ' >
+       <div className='ml-4  flex flex-col gap-2  ' >
 
           <div className=' flex gap-2 w-fit  items-center rounded-xl p-2 hover:bg-slate-800'>
             {/* <img className='w-4 h-4' src={assets.question_icon} alt="" /> */}
@@ -124,8 +124,8 @@ const Main = () => {
       </motion.div>
 
        {!showResult?
-         <div className='flex flex-col w-full h-[70%] items-center '>
-            <div className=' w-[100%]   md:w-[70%]   md:flex  md:flex-col  '>
+         <div className='flex  flex-col w-full h-[70%]   items-center '>
+            <div className=' w-[100%] h-full   md:w-[70%]   md:flex  md:flex-col  '>
          
             <motion.div 
               initial={{opacity:0, x:-30}}
@@ -137,7 +137,7 @@ const Main = () => {
           </motion.div>
 
             <div
-             className='flex md:overflow-hidden w-[95%] md:w-[100%]   overflow-x-scroll overflow-hidden scrollbar-hide     ml-4       gap-2 '>
+             className='flex md:overflow-hidden w-[95%] md:w-[100%] mt-6  overflow-x-scroll overflow-hidden scrollbar-hide     ml-4       gap-2 '>
              {/* overflow-x-scroll overflow-hidden scrollbar-hide */}
              
     
@@ -193,7 +193,7 @@ const Main = () => {
       </div>
       </div>
        </div>:
-       <div className='h-[420px] ml-6 md:ml-[10%] '>
+       <div className='h-[70%] ml-6 md:ml-[10%] '>
           <div className='flex items-center mt-5 gap-6 md:ml-6'>
           <img className='w-16 rounded-full' src={assets.user_icon} alt="" />
            <p>{recentPrompt}</p>
@@ -241,7 +241,7 @@ const Main = () => {
        transition={{duration:0.5,delay:0.6,ease:easeOut}}
  
        className=''>
-       <p className='text-[12px] text-center md:ml-[7%]   md:text-xs ml-2  md:w-[80%]   '>Gemini may display inaccurate info, including about people, so double-check its responses</p>
+       <p className='text-[12px] text-center md:ml-[7%]    md:text-xs ml-2  md:w-[80%]   '>Gemini may display inaccurate info, including about people, so double-check its responses</p>
        </motion.div>
        
     </div>
