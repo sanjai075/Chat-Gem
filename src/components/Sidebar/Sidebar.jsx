@@ -22,7 +22,7 @@ const load = async (prompt)=>{
   
 
   return (
-    <div className={extended?'hidden w-48 transition-all duration-1000 ease-out   md:block font-Outfit text-slate-300  bg-slate-950':'w-16 transition-all duration-1000 ease-out md:block  font-Outfit text-white  bg-slate-950'}>
+    <div className={extended?'hidden w-48 transition-all duration-1000 ease-out   md:block font-Outfit text-slate-300  bg-slate-950':' hidden w-16 transition-all duration-1000 ease-out md:block  font-Outfit text-white  bg-slate-950'}>
     <motion.div
     initial={{opacity:0, x:-80}}
     animate={{ opacity: 1, x:0 }}

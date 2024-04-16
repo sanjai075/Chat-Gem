@@ -39,7 +39,7 @@ const Main = () => {
  }
 
   return (
-    <div className='w-full flex flex-col  bg-gray-950 text-slate-300 font-Outfit'>
+    <div className='w-full  flex flex-col  bg-gray-950 text-slate-300 font-Outfit'>
       
      {side ?
      <div className={side?'md:hidden absolute flex flex-col h-full   w-52 bg-slate-900 transition-all  duration-300 ease-out z-10':'w-0  transition-all duration-500 ease-out'} >
@@ -124,20 +124,20 @@ const Main = () => {
       </motion.div>
 
        {!showResult?
-         
-            <div className='md:h-[420px]  w-[100%]   md:w-[70%] md:ml-[14%]  md:flex mt-2 md:flex-col  '>
+         <div className='flex flex-col w-full h-[70%] items-center '>
+            <div className=' w-[100%]   md:w-[70%]   md:flex  md:flex-col  '>
          
             <motion.div 
               initial={{opacity:0, x:-30}}
               animate={{ opacity: 1, x:0 }}
               transition={{duration:1 , delay:0.3 , ease:easeOut}}
-             className='   mt-5 ml-5  overflow-visible md:h-[180px]  md:mt-1 md:text-[60px] md:w-[70]  h-48 flex flex-col justify-center  text-6xl font-bold '>
+             className='   ml-5  overflow-visible  md:h-[150px]  md:mt-1 md:text-[50px] md:w-[70]  h-44 flex flex-col  text-5xl font-bold mt-3 '>
              <p className="bg-gradient-to-r from-blue-500 via-red-800 to-red-950 inline-block text-transparent bg-clip-text">Hello, Dev</p>
             <p className="bg-gradient-to-r from-blue-500 via-red-500 to-red-800 inline-block text-transparent bg-clip-text">How can I help you today?</p>
           </motion.div>
 
             <div
-             className='flex md:overflow-hidden w-[95%] md:w-[100%]   overflow-x-scroll overflow-hidden scrollbar-hide     ml-4      mt-5 gap-2 '>
+             className='flex md:overflow-hidden w-[95%] md:w-[100%]   overflow-x-scroll overflow-hidden scrollbar-hide     ml-4       gap-2 '>
              {/* overflow-x-scroll overflow-hidden scrollbar-hide */}
              
     
@@ -191,6 +191,7 @@ const Main = () => {
              </motion.div>
 
       </div>
+      </div>
        </div>:
        <div className='h-[420px] ml-6 md:ml-[10%] '>
           <div className='flex items-center mt-5 gap-6 md:ml-6'>
@@ -218,7 +219,7 @@ const Main = () => {
       animate={{ opacity: 1, scaleX:1}}
       transition={{duration:0.5,delay:0.6,ease:easeOut}}
 
-      className=' flex relative  flex-col h-14 justify-center mt-7 m-3 bg-slate-900 rounded-3xl w-[90%] ml-[6%] md:ml-[18%] md:w-[62%]   '>
+      className=' flex relative  flex-col h-14 justify-center  m-3 bg-slate-900 rounded-3xl w-[90%] ml-[6%] md:ml-[18%] md:w-[62%]   '>
 
           <div className='absolute flex right-6  '>
             {/* <img className='w-5' src={assets.gallery_icon} alt="" />
@@ -240,7 +241,7 @@ const Main = () => {
        transition={{duration:0.5,delay:0.6,ease:easeOut}}
  
        className=''>
-       <p className='text-[12px] text-center md:ml-[7%] md:mt-6  md:text-xs ml-2  md:w-[80%] mt-4  '>Gemini may display inaccurate info, including about people, so double-check its responses</p>
+       <p className='text-[12px] text-center md:ml-[7%]   md:text-xs ml-2  md:w-[80%]   '>Gemini may display inaccurate info, including about people, so double-check its responses</p>
        </motion.div>
        
     </div>
