@@ -42,7 +42,7 @@ const Main = () => {
     <div className='w-full flex flex-col  bg-gray-950 text-slate-300 font-Outfit'>
       
      {side ?
-     <div className={side?'md:hidden absolute flex flex-col h-full   w-52 bg-slate-900 transition-all  duration-150 ease-out z-10':'w-0 transition-all duration-500 ease-out'} >
+     <div className={side?'md:hidden absolute flex flex-col h-full   w-52 bg-slate-900 transition-all  duration-300 ease-out z-10':'w-0  transition-all duration-500 ease-out'} >
 
         <div className='flex items-center p-[15px] gap-[12.5px] '>
          {/* <img onClick={()=>SetSide(!side)} className='w-6' src={assets.menu_icon} alt="" /> */}
@@ -144,7 +144,7 @@ const Main = () => {
               <motion.div
                 initial={{opacity:0}}
                 animate={{ opacity: 1 }}
-                transition={{duration:1,delay:0.2,ease:easeOut}}
+                transition={{duration:1,delay:0.4,ease:easeOut}}
                 className='bg-slate-900 max-w-56 min-w-48 md:h-56  h-52 p-3 flex  rounded-2xl hover:bg-slate-800 '
                 // className="flex-shrink-0 w-44 h-52  flex md:w-52 bg-slate-900 rounded-2xl p-3"
                 
@@ -157,7 +157,7 @@ const Main = () => {
              <motion.div
                initial={{opacity:0}}
                animate={{ opacity: 1 }}
-               transition={{duration:1,delay:0.4,ease:easeOut}}
+               transition={{duration:1,delay:0.8,ease:easeOut}}
                className='bg-slate-900 max-w-56 min-w-52  h-52 md:h-56 p-3 flex rounded-2xl hover:bg-slate-800'
               // className="flex-shrink-0 w-44 h-52 flex md:w-52  bg-slate-900 rounded-2xl p-3"
                >
@@ -169,7 +169,7 @@ const Main = () => {
               <motion.div
                  initial={{opacity:0}}
                   animate={{ opacity: 1 }}
-                  transition={{duration:1,delay:0.5,ease:easeOut}}
+                  transition={{duration:1,delay:1,ease:easeOut}}
                   className='bg-slate-900 max-w-56 min-w-52 h-52 md:h-56 flex  p-3  rounded-2xl hover:bg-slate-800'
                   // className="flex-shrink-0 w-44 h-52 flex md:w-52  bg-slate-900 rounded-2xl p-3"
                   >
@@ -181,7 +181,7 @@ const Main = () => {
               <motion.div
                  initial={{opacity:0}}
                  animate={{ opacity: 1 }}
-                 transition={{duration:1,delay:0.6,ease:easeOut}}
+                 transition={{duration:1,delay:1.2,ease:easeOut}}
                  className='bg-slate-900 max-w-56 min-w-52 h-52 md:h-56 flex p-3  rounded-2xl hover:bg-slate-800 '
                 // className="flex-shrink-0 w-44 h-52 flex md:w-52  bg-slate-900 rounded-2xl p-3"
                  >
@@ -199,14 +199,14 @@ const Main = () => {
         </div>
         
         <div className='flex h-72 gap-3 mt-6 md:mt-5 md:ml-[10%] '>
-          <img className={loading?'w-64 md:w-7 h-7 md: animate-spin ':'w-[100px] h-8 md:w-7 '} src={assets.gemini_icon} alt="" />
+          <img className={loading?'w-6 md:w-7 h-7  animate-spin ':'w-6 h-6 md:w-7 '} src={assets.gemini_icon} alt="" />
           {loading?
           <div className=' flex flex-col gap-3'>
             <hr  className='bg-gradient-to-r from-cyan-500 to-blue-500 animate-pulse   w-[300px]  md:w-[500px]  h-4 '  />
             <hr  className='bg-gradient-to-r from-cyan-500 to-blue-500 animate-pulse  w-[250px]  md:w-[450px]  h-4' />
             <hr  className='bg-gradient-to-r from-cyan-500 to-blue-500 animate-pulse  w-[200px] md:w-[300px] h-4' />
            </div>:
-          <p className='overflow-y-scroll overflow-hidden scrollbar-hide md:w-[70%] mr-4    ' dangerouslySetInnerHTML={{__html:resultData}}></p>}
+          <p className='overflow-y-scroll overflow-hidden scrollbar-hide md:w-[70%] w-[85%]   ' dangerouslySetInnerHTML={{__html:resultData}}></p>}
          
         </div>
 
@@ -240,7 +240,7 @@ const Main = () => {
        transition={{duration:0.5,delay:0.6,ease:easeOut}}
  
        className=''>
-       <p className='text-[12px] text-center md:ml-[7%] md:mt-6  md:text-xs ml-2  md:w-[80%]   '>Gemini may display inaccurate info, including about people, so double-check its responses</p>
+       <p className='text-[12px] text-center md:ml-[7%] md:mt-6  md:text-xs ml-2  md:w-[80%] mt-4  '>Gemini may display inaccurate info, including about people, so double-check its responses</p>
        </motion.div>
        
     </div>
