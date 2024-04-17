@@ -50,7 +50,7 @@ const Main = () => {
     <div className='w-full  flex flex-col  bg-gray-950 text-slate-300 font-Outfit'>
       
      {side ?
-     <div className={side?'md:hidden absolute flex flex-col h-full   w-52 bg-slate-900 transition-all  duration-300 ease-out z-10':'w-0  transition-all duration-500 ease-out'} >
+     <div className={side?'md:hidden  absolute flex flex-col h-full   w-52 bg-slate-900 transition-all  duration-300 ease-out z-10':'w-0  transition-all duration-500 ease-out'} >
 
         <div className='flex items-center p-[15px] gap-[12.5px] '>
          {/* <img onClick={()=>SetSide(!side)} className='w-6' src={assets.menu_icon} alt="" /> */}
@@ -132,7 +132,7 @@ const Main = () => {
       </motion.div>
 
        {!showResult?
-         <div className='flex   flex-col w-full h-[80%]   items-center justify-center '>
+         <div className='flex   flex-col w-full h-[70%]   items-center justify-center '>
             <div className=' w-[100%]   md:w-[80%]   md:flex  md:flex-col  '>
          
             <motion.div 
