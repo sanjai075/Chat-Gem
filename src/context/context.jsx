@@ -38,11 +38,14 @@ const newChat =()=>{
         }
         else
         {
+        
            SetPrevPrompts(prev=>[...prev,input])
            SetRecentPrompt(input)
+           SetInput("")
            response = await runChat(input)
+           
         }
-    console.log(response)
+    
       let responseArr = response.split("**");
       let newRes = ""
       for (let i =0 ; i <responseArr.length ; i++)

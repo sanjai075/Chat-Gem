@@ -13,8 +13,14 @@ import { LiaCompass } from "react-icons/lia";
 import { IoCodeSlashOutline } from "react-icons/io5";
 import { IoSend } from "react-icons/io5";
 import { easeOut, motion } from "framer-motion"
+import { GiHotMeal } from "react-icons/gi";
 
 const Main = () => {
+
+  const example1 = "Suggest beautiful places to see on an upcomming road trip"
+  const example2 = "Give me a basic guide on how to cultivate a growth mindset"
+ const example3 = "Brainstrom team bonding activities for our work retreat"
+ const example4 = "Write a meal plan for one week using a mixture of proteins and vegetables that can be prepared in under 30 minutes"
  
   const {input,
     SetInput,
@@ -34,6 +40,8 @@ const Main = () => {
   const [side,SetSide] =useState(false)
 
   const load = async (prompt)=>{
+    SetInput("")
+    SetPrevPrompts(prev=>[...prev,prompt])
     SetRecentPrompt(prompt)
    await onSent(prompt)
  }
@@ -50,7 +58,7 @@ const Main = () => {
          <p className='text-[19px]'>Gemini</p>
         </div>
 
-        <div onClick={()=>newChat()} className='flex bg-slate-700 justify-center items-center w-fit p-4  gap-2 mt-9 ml-4 rounded-2xl h-7 '>
+        <div onClick={()=>{SetSide(!side);newChat()}} className='flex bg-slate-700 justify-center items-center w-fit p-4  gap-2 mt-9 ml-4 rounded-2xl h-7 '>
             {/* <img className='w-4 h-5' src={assets.plus_icon}/> */}
             <FaPlus className='text-white ' />
             <p className='  '>New chat</p>
@@ -68,7 +76,7 @@ const Main = () => {
             <div className='w-36 flex  items-center  text-[13px] gap-2 cursor-pointer  p-2 font-Outfit mr-5 hover:bg-slate-800 rounded-xl ml-1 '>
              {/* <img className='w-6 h-6 ' src={assets.message_icon} alt="" /> */}
              <FaRegMessage className='text-white w-4 h-4 ' />
-             <p onClick={()=>load(item)} className=''>{item.slice(0,16)}...</p>
+             <p onClick={()=>{SetSide(!side);load(item)}} className=''>{item.slice(0,16)}...</p>
             </div>
           
           
@@ -97,7 +105,7 @@ const Main = () => {
           <div className=' flex gap-2 w-fit  items-center rounded-xl p-2 hover:bg-slate-800'>
             {/* <img className='w-4 h-4' src={assets.setting_icon} alt="" /> */}
             <IoMdSettings className='text-white w-5 h-5' />
-            <p>Setting</p>
+            <p>Settings</p>
           </div> 
 
       </div>
@@ -124,20 +132,20 @@ const Main = () => {
       </motion.div>
 
        {!showResult?
-         <div className='flex   flex-col w-full h-[70%]   items-center '>
-            <div className=' w-[100%] h-full   md:w-[70%]   md:flex  md:flex-col  '>
+         <div className='flex   flex-col w-full h-[80%]   items-center justify-center '>
+            <div className=' w-[100%]   md:w-[80%]   md:flex  md:flex-col  '>
          
             <motion.div 
               initial={{opacity:0, x:-30}}
               animate={{ opacity: 1, x:0 }}
               transition={{duration:1 , delay:0.3 , ease:easeOut}}
-             className='   ml-5  overflow-visible  md:h-[150px]  md:mt-1 md:text-[50px] md:w-[70]  h-44 flex flex-col  text-5xl font-bold mt-12 '>
+             className='   ml-5  overflow-visible  md:h-[150px]  md:mt-1 md:text-[50px] md:w-[70]  h-44 flex flex-col  text-5xl font-bold  '>
              <p className="bg-gradient-to-r from-blue-500 via-red-800 to-red-950 inline-block text-transparent bg-clip-text">Hello, Dev</p>
             <p className="bg-gradient-to-r from-blue-500 via-red-500 to-red-800 inline-block text-transparent bg-clip-text">How can I help you today?</p>
           </motion.div>
 
             <div
-             className='flex md:overflow-hidden w-[95%] md:w-[100%] mt-14  overflow-x-scroll overflow-hidden scrollbar-hide     ml-4       gap-2 '>
+             className='flex md:overflow-hidden w-[95%] md:w-[100%]  md:mt-3 overflow-x-scroll overflow-hidden scrollbar-hide     ml-4       gap-2 '>
              {/* overflow-x-scroll overflow-hidden scrollbar-hide */}
              
     
@@ -148,7 +156,7 @@ const Main = () => {
                 className='bg-slate-900 max-w-56 min-w-48 md:h-56  h-52 p-3 flex  rounded-2xl hover:bg-slate-800 '
                 // className="flex-shrink-0 w-44 h-52  flex md:w-52 bg-slate-900 rounded-2xl p-3"
                 
-                >
+               onClick={()=>{SetInput(example1);load(example1)}} >
                 <p>Suggest beautiful places to see on an upcomming road trip</p>
                 {/* <img className='w-6 self-end ' src={assets.compass_icon} alt="" /> */}
                 <LiaCompass className='w-20 h-8 self-end' />
@@ -160,8 +168,8 @@ const Main = () => {
                transition={{duration:1,delay:0.8,ease:easeOut}}
                className='bg-slate-900 max-w-56 min-w-52  h-52 md:h-56 p-3 flex rounded-2xl hover:bg-slate-800'
               // className="flex-shrink-0 w-44 h-52 flex md:w-52  bg-slate-900 rounded-2xl p-3"
-               >
-               <p>Breifly summarize this concept : urban planning</p>
+              onClick={()=>{SetInput(example2);load(example2)}} >
+               <p>Give me a basic guide on how to cultivate a growth mindset</p>
                <SlBulb className='w-12 h-8 self-end' />
                {/* <img className='w-6 self-end '  src={assets.bulb_icon} alt="" /> */}
               </motion.div>
@@ -172,7 +180,7 @@ const Main = () => {
                   transition={{duration:1,delay:1,ease:easeOut}}
                   className='bg-slate-900 max-w-56 min-w-52 h-52 md:h-56 flex  p-3  rounded-2xl hover:bg-slate-800'
                   // className="flex-shrink-0 w-44 h-52 flex md:w-52  bg-slate-900 rounded-2xl p-3"
-                  >
+                  onClick={()=>{SetInput(example3);load(example3)}}>
                  <p>Brainstrom team bonding activities for our work retreat</p>
                   {/* <img className='w-6 self-end '  src={assets.message_icon} alt="" /> */}
                  <FaRegMessage className=' w-16 h-5 flex self-end mb-1  ' />
@@ -184,10 +192,11 @@ const Main = () => {
                  transition={{duration:1,delay:1.2,ease:easeOut}}
                  className='bg-slate-900 max-w-56 min-w-52 h-52 md:h-56 flex p-3  rounded-2xl hover:bg-slate-800 '
                 // className="flex-shrink-0 w-44 h-52 flex md:w-52  bg-slate-900 rounded-2xl p-3"
-                 >
-                <p>imporove the readability of the following code</p>
+                onClick={()=>{SetInput(example4);load(example4)}}>
+                <p>Write a meal plan for one week using a mixture of proteins and vegetables that can be prepared in under 30 minutes</p>
                 {/* <img className='w-6 self-end '  src={assets.code_icon} alt="" /> */}
-               <IoCodeSlashOutline className='w-16 h-6 self-end mb-[2px] ' />
+               {/* <IoCodeSlashOutline className='w-16 h-6 self-end mb-[2px] ' /> */}
+               <GiHotMeal className='w-24 h-8  self-end mb-[2px] ' />
              </motion.div>
 
       </div>
@@ -241,7 +250,7 @@ const Main = () => {
        transition={{duration:0.5,delay:0.6,ease:easeOut}}
  
        className=''>
-       <p className='text-[12px] text-center md:ml-[7%]    md:text-xs ml-2  md:w-[80%]   '>Gemini may display inaccurate info, including about people, so double-check its responses</p>
+       <p className='text-[12px] text-center md:ml-[7%] mb-2   md:text-xs ml-2  md:w-[80%]   '>Gemini may display inaccurate info, including about people, so double-check its responses</p>
        </motion.div>
        
     </div>
