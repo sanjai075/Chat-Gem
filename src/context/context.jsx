@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import runChat from "../config/gemini";
 
 export const Context = createContext();
@@ -7,15 +7,25 @@ const ContextProvider = (props)=>{
 
     const [input,SetInput] = useState("")
     const [recentPrompt,SetRecentPrompt] = useState("")
-    const [prevPrompt,SetPrevPrompts] = useState([])
+    const [prevPrompt,SetPrevPrompts] = useState(()=>{
+        const localPrompts = localStorage.getItem("prompts")
+        return localPrompts ? JSON.parse(localPrompts) : []
+    })
     const [showResult,SetShowresult] = useState(false)
     const [loading,SetLoading] = useState(false)
     const [resultData,SetResultData] =useState("")
+
+    useEffect(()=>{
+        if(prevPrompt.length > 0 ){
+            localStorage.setItem("prompts",JSON.stringify(prevPrompt))
+        }
+    },[prevPrompt])
 
 const newChat =()=>{
  SetShowresult(false)
  SetLoading(false)
 }
+    console.log(prevPrompt)
     
 
     const delayPara = (index,nextWord)=>{

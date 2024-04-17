@@ -54,11 +54,11 @@ const Main = () => {
 
         <div className='flex items-center p-[15px] gap-[12.5px] '>
          {/* <img onClick={()=>SetSide(!side)} className='w-6' src={assets.menu_icon} alt="" /> */}
-         <TfiMenu  onClick={()=>SetSide(!side)}   className='w-5 h-6 ml-[5px]' />
+         <TfiMenu  onClick={()=>SetSide(!side)}   className='w-5 h-6 ml-[5px] hover:cursor-pointer' />
          <p className='text-[19px]'>Gemini</p>
         </div>
 
-        <div onClick={()=>{SetSide(!side);newChat()}} className='flex bg-slate-700 justify-center items-center w-fit p-4  gap-2 mt-9 ml-4 rounded-2xl h-7 '>
+        <div onClick={()=>{SetSide(!side);newChat()}} className='flex bg-slate-700 justify-center items-center w-fit p-4  gap-2 mt-9 ml-4 rounded-2xl h-7 hover:cursor-pointer '>
             {/* <img className='w-4 h-5' src={assets.plus_icon}/> */}
             <FaPlus className='text-white ' />
             <p className='  '>New chat</p>
@@ -73,10 +73,10 @@ const Main = () => {
       {prevPrompt.map((item)=>{
          return(
           
-            <div className='w-36 flex  items-center  text-[13px] gap-2 cursor-pointer  p-2 font-Outfit mr-5 hover:bg-slate-800 rounded-xl ml-1 '>
+            <div onClick={()=>{SetSide(!side);load(item)}} className='w-36 flex hover:cursor-pointer  items-center  text-[13px] gap-2 cursor-pointer  p-2 font-Outfit mr-5 hover:bg-slate-800 rounded-xl ml-1 '>
              {/* <img className='w-6 h-6 ' src={assets.message_icon} alt="" /> */}
              <FaRegMessage className='text-white w-4 h-4 ' />
-             <p onClick={()=>{SetSide(!side);load(item)}} className=''>{item.slice(0,16)}...</p>
+             <p  className=''>{item.slice(0,16)}...</p>
             </div>
           
           
@@ -90,19 +90,19 @@ const Main = () => {
 
        <div className='ml-4  flex flex-col gap-2  ' >
 
-          <div className=' flex gap-2 w-fit  items-center rounded-xl p-2 hover:bg-slate-800'>
+          <div className=' flex gap-2 w-fit  items-center rounded-xl p-2 hover:bg-slate-800 hover:cursor-pointer'>
             {/* <img className='w-4 h-4' src={assets.question_icon} alt="" /> */}
             <IoMdHelpCircleOutline className='text-white w-5 h-5' />
             <p>Help</p>
          </div> 
 
-          <div className=' flex gap-2 w-fit items-center  rounded-xl p-2 hover:bg-slate-800'>
+          <div className=' flex gap-2 w-fit items-center  rounded-xl p-2 hover:bg-slate-800 hover:cursor-pointer'>
              {/* <img className='w-4 h-4' src={assets.history_icon} alt="" /> */}
              <FaHistory className='text-white w-4 h-4' />
              <p>Activity</p>
           </div> 
 
-          <div className=' flex gap-2 w-fit  items-center rounded-xl p-2 hover:bg-slate-800'>
+          <div className=' flex gap-2 w-fit  items-center rounded-xl p-2 hover:bg-slate-800 hover:cursor-pointer'>
             {/* <img className='w-4 h-4' src={assets.setting_icon} alt="" /> */}
             <IoMdSettings className='text-white w-5 h-5' />
             <p>Settings</p>
@@ -153,7 +153,7 @@ const Main = () => {
                 initial={{opacity:0}}
                 animate={{ opacity: 1 }}
                 transition={{duration:1,delay:0.4,ease:easeOut}}
-                className='bg-slate-900 max-w-56 min-w-48 md:h-56  h-52 p-3 flex  rounded-2xl hover:bg-slate-800 '
+                className='bg-slate-900 max-w-56 min-w-48 md:h-56  h-52 p-3 flex hover:cursor-pointer rounded-2xl hover:bg-slate-800 '
                 // className="flex-shrink-0 w-44 h-52  flex md:w-52 bg-slate-900 rounded-2xl p-3"
                 
                onClick={()=>{SetInput(example1);load(example1)}} >
@@ -166,7 +166,7 @@ const Main = () => {
                initial={{opacity:0}}
                animate={{ opacity: 1 }}
                transition={{duration:1,delay:0.8,ease:easeOut}}
-               className='bg-slate-900 max-w-56 min-w-52  h-52 md:h-56 p-3 flex rounded-2xl hover:bg-slate-800'
+               className='bg-slate-900 max-w-56 min-w-52  h-52 md:h-56 p-3 hover:cursor-pointer flex rounded-2xl hover:bg-slate-800'
               // className="flex-shrink-0 w-44 h-52 flex md:w-52  bg-slate-900 rounded-2xl p-3"
               onClick={()=>{SetInput(example2);load(example2)}} >
                <p>Give me a basic guide on how to cultivate a growth mindset</p>
@@ -178,7 +178,7 @@ const Main = () => {
                  initial={{opacity:0}}
                   animate={{ opacity: 1 }}
                   transition={{duration:1,delay:1,ease:easeOut}}
-                  className='bg-slate-900 max-w-56 min-w-52 h-52 md:h-56 flex  p-3  rounded-2xl hover:bg-slate-800'
+                  className='bg-slate-900 max-w-56 min-w-52 h-52 md:h-56 flex hover:cursor-pointer  p-3  rounded-2xl hover:bg-slate-800'
                   // className="flex-shrink-0 w-44 h-52 flex md:w-52  bg-slate-900 rounded-2xl p-3"
                   onClick={()=>{SetInput(example3);load(example3)}}>
                  <p>Brainstrom team bonding activities for our work retreat</p>
@@ -190,7 +190,7 @@ const Main = () => {
                  initial={{opacity:0}}
                  animate={{ opacity: 1 }}
                  transition={{duration:1,delay:1.2,ease:easeOut}}
-                 className='bg-slate-900 max-w-56 min-w-52 h-52 md:h-56 flex p-3  rounded-2xl hover:bg-slate-800 '
+                 className='bg-slate-900 max-w-56 min-w-52 h-52 md:h-56 flex p-3 hover:cursor-pointer rounded-2xl hover:bg-slate-800 '
                 // className="flex-shrink-0 w-44 h-52 flex md:w-52  bg-slate-900 rounded-2xl p-3"
                 onClick={()=>{SetInput(example4);load(example4)}}>
                 <p>Write a meal plan for one week using a mixture of proteins and vegetables that can be prepared in under 30 minutes</p>
@@ -230,7 +230,7 @@ const Main = () => {
 
       className=' flex relative  flex-col h-14 justify-center  m-3 bg-slate-900 rounded-3xl w-[90%] ml-[6%] md:ml-[18%] md:w-[62%]   '>
 
-          <div className='absolute flex right-6  '>
+          <div className='absolute flex right-6 hover:cursor-pointer '>
             {/* <img className='w-5' src={assets.gallery_icon} alt="" />
             <img className='w-5' src={assets.mic_icon} alt="" /> */}
             {/* <img onClick={()=>onSent()} className='w-5' src={assets.send_icon} alt="" /> */}
@@ -238,7 +238,7 @@ const Main = () => {
           </div>
 
         <div className=' '>
-        <input onChange={(e)=>SetInput(e.target.value)} value={input} className='bg-slate-900 p-3 outline-none rounded-3xl w-[80%] h-full    ' type="text" placeholder='Enter a prompt here' />
+        <input onChange={(e)=>SetInput(e.target.value)} onClick={()=>SetSide(false)} value={input} className='bg-slate-900 p-3 outline-none rounded-3xl w-[80%] h-full    ' type="text" placeholder='Enter a prompt here' />
         </div>
 
        

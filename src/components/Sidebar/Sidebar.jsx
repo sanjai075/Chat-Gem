@@ -32,12 +32,12 @@ const load = async (prompt)=>{
       
       <div className='  ml-4  '>
 
-          <div className='  mt-5  '>
+          <div className='  mt-5 hover:cursor-pointer  '>
             {/* <img onClick={()=>SetExtended(!extended)} src={assets.menu_icon}/> */}
             <TfiMenu onClick={()=>SetExtended(!extended)} className='text-white w-7 h-6 ' />
           </div>
 
-         <div onClick={()=>newChat()} className='flex mt-9 bg-slate-800 items-center justify-center w-fit p-1   mr-5   rounded-3xl gap-2  '>
+         <div onClick={()=>newChat()} className='flex mt-9 hover:cursor-pointer bg-slate-800 items-center justify-center w-fit p-1   mr-5   rounded-3xl gap-2  '>
             {/* <img className='w-4 h-5' src={assets.plus_icon}/> */}
             <FaPlus className='text-white w-5 h-4' />
            {extended && <p className=' w-20 '>New chat</p>}
@@ -54,10 +54,11 @@ const load = async (prompt)=>{
            {prevPrompt.map((item)=>{
            return(
           
-            <div className='w-36 flex items-center  text-[13px] gap-2 cursor-pointer  p-2 font-Outfit mr-5 hover:bg-slate-300 rounded-xl  '>
+            <div onClick={()=>load(item)} className='w-36 flex items-center hover:cursor-pointer  text-[13px] gap-2 cursor-pointer  p-2 font-Outfit mr-5 hover:bg-slate-800 rounded-xl  '>
              {/* <img className='w-6 h-6 ' src={assets.message_icon} alt="" /> */}
              <FaRegMessage className='text-white w-4 h-4' />
-             <p onClick={()=>load(item)} className=''>{item.slice(0,16)}...</p>
+             <p  className=''>{item.slice(0,16)}...</p>
+            
             </div>
           
           
@@ -76,19 +77,19 @@ const load = async (prompt)=>{
 
            <div className='text-[14px] flex flex-col ml-4 w-fit mb-4 gap-4 '>
 
-             <div className=' flex gap-2  items-center rounded-xl p-1 hover:bg-slate-800'>
+             <div className=' flex gap-2 hover:cursor-pointer items-center rounded-xl p-1 hover:bg-slate-800'>
               {/* <img className='w-4 h-4' src={assets.question_icon} alt="" /> */}
               <IoMdHelpCircleOutline className='text-white w-5 h-5' />
               {extended && <p>Help</p>}
            </div> 
 
-         <div className='flex gap-2 items-center rounded-xl p-1 hover:bg-slate-800'>
+         <div className='flex gap-2 items-center hover:cursor-pointer rounded-xl p-1 hover:bg-slate-800'>
             {/* <img className='w-4 h-4' src={assets.history_icon} alt="" /> */}
             <FaHistory className='text-white w-4 h-4' />
             {extended && <p>Acitvity</p>}
          </div>
          
-         <div className=' flex gap-2 items-center rounded-xl p-1 hover:bg-slate-800'>
+         <div className=' flex gap-2 items-center hover:cursor-pointer rounded-xl p-1 hover:bg-slate-800'>
             {/* <img className='w-4 h-4' src={assets.setting_icon} alt="" /> */}
             <IoMdSettings className='text-white w-4 h-4' />
             {extended && <p>Settings</p>}
