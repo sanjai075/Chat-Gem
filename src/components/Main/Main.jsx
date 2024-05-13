@@ -140,7 +140,7 @@ const Main = () => {
               animate={{ opacity: 1, x:0 }}
               transition={{duration:1 , delay:0.3 , ease:easeOut}}
              className='   ml-5  overflow-visible  md:h-[150px]  md:mt-1 md:text-[50px] md:w-[70]  h-44 flex flex-col  text-5xl font-bold  '>
-             <p className="bg-gradient-to-r from-blue-500 via-red-800 to-red-950 inline-block text-transparent bg-clip-text">Hello, Dev</p>
+             <p className="bg-gradient-to-r from-blue-500 via-red-800 to-red-950 inline-block text-transparent bg-clip-text ">Hello, Dev</p>
             <p className="bg-gradient-to-r from-blue-500 via-red-500 to-red-800 inline-block text-transparent bg-clip-text">How can I help you today?</p>
           </motion.div>
 
