@@ -55,7 +55,7 @@ const Main = () => {
         <div className='flex items-center p-[15px] gap-[12.5px] '>
          {/* <img onClick={()=>SetSide(!side)} className='w-6' src={assets.menu_icon} alt="" /> */}
          <TfiMenu  onClick={()=>SetSide(!side)}   className='w-5 h-6 ml-[5px] hover:cursor-pointer' />
-         <p className='text-[19px]'>Gemini</p>
+         <p className='text-[19px]'>ChatGem</p>
         </div>
 
         <div onClick={()=>{SetSide(!side);newChat()}} className='flex bg-slate-700 justify-center items-center w-fit p-4  gap-2 mt-9 ml-4 rounded-2xl h-7 hover:cursor-pointer '>
@@ -125,7 +125,7 @@ const Main = () => {
         
            <div className='flex items-center w-full gap-[12.5px] ml-[-8px]  '>
             <TfiMenu  onClick={()=>SetSide(!side)}  className=' w-5 h-6   ml-4 md:hidden rounded-md ' />
-            <p className=' md:ml-4 text-[19px] md:text-2xl'>Gemini</p>
+            <p className=' md:ml-4 text-[19px] md:text-2xl'>ChatGem</p>
           </div>
 
            <img className='  rounded-full w-9  ' src={assets.user_icon} alt="" />
@@ -133,7 +133,7 @@ const Main = () => {
 
        {!showResult?
          <div className='flex   flex-col w-full h-[70%]   items-center justify-center '>
-            <div className=' w-[100%]   md:w-[80%]   md:flex  md:flex-col  '>
+            <div className=' w-[100%]   md:w-[90%]   md:flex  md:flex-col  '>
          
             <motion.div 
               initial={{opacity:0, x:-30}}
@@ -250,7 +250,7 @@ const Main = () => {
        transition={{duration:0.5,delay:0.6,ease:easeOut}}
  
        className=''>
-       <p className='text-[12px] text-center md:ml-[7%] mb-2   md:text-xs ml-2  md:w-[80%]   '>Gemini may display inaccurate info, including about people, so double-check its responses</p>
+       <p className='text-[12px] text-center md:ml-[7%] mb-2   md:text-xs ml-2  md:w-[80%]   '>ChatGem may display inaccurate info, including about people, so double-check its responses</p>
        </motion.div>
        
     </div>

@@ -17,6 +17,7 @@ const ContextProvider = (props)=>{
 
     useEffect(()=>{
         if(prevPrompt.length > 0 ){
+            
             localStorage.setItem("prompts",JSON.stringify(prevPrompt))
         }
     },[prevPrompt])

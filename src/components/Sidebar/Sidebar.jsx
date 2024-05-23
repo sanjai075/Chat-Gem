@@ -50,7 +50,7 @@ const load = async (prompt)=>{
                <p>Recent</p>
            </div >
 
-         <div className='mt-4 h-[200px] overflow-y-scroll]'>
+         <div className='mt-4 h-[220px] overflow-y-scroll overflow-hidden scrollbar-hide scrollbar-thumb-gray-400 scrollbar-track-gray-200'>
            {prevPrompt.map((item)=>{
            return(
           
