@@ -132,7 +132,7 @@ const Main = () => {
       </motion.div>
 
        {!showResult?
-         <div className='flex   flex-col w-full h-[70%]   items-center justify-center '>
+         <div className='flex md:ml-14  flex-col w-full h-[70%]   items-center justify-center '>
             <div className=' w-[100%]   md:w-[90%]   md:flex  md:flex-col  '>
          
             <motion.div 
@@ -228,7 +228,7 @@ const Main = () => {
       animate={{ opacity: 1, scaleX:1}}
       transition={{duration:0.5,delay:0.6,ease:easeOut}}
 
-      className=' flex relative  flex-col h-14 justify-center  m-3 bg-slate-900 rounded-3xl w-[90%] ml-[6%] md:ml-[18%] md:w-[62%]   '>
+      className=' flex relative  flex-col h-14 justify-center  m-3  bg-slate-900 rounded-3xl w-[90%] ml-[6%] md:ml-[18%] md:w-[62%]   '>
 
           <div className='absolute flex right-6 hover:cursor-pointer '>
             {/* <img className='w-5' src={assets.gallery_icon} alt="" />
